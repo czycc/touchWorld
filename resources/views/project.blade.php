@@ -11,7 +11,7 @@
         <div class="header">
             项目执行表
         </div>
-        <ul class="title">
+        <ul class="title titleAll">
             <li class="appellation">项目名称</li>
             <li class="beginTime">项目开始时间</li>
             <li class="endTime">项目结束时间</li>

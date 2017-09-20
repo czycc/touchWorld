@@ -74,10 +74,15 @@ class ProjectController extends Controller
         return Admin::grid(Project::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->column('name','项目名称');
+            $grid->column('name', '项目名称');
             $grid->column('location', '项目地点');
-            $grid->column('');
-
+            $grid->column('dateStart', '开始时间');
+            $grid->column('dateOver', '结束时间');
+            $grid->column('principal', '负责人');
+            $grid->column('supervision', '监督人');
+            $grid->column('info', '项目详情');
+            $grid->column('remark', '备注');
+            $grid->column('pub', '网站公众号推送');
         });
     }
 
@@ -91,9 +96,15 @@ class ProjectController extends Controller
         return Admin::form(Project::class, function (Form $form) {
 
             $form->display('id', 'ID');
-
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->text('name', '项目名称');
+            $form->text('location', '项目地点');
+            $form->date('dateStart', '开始时间');
+            $form->date('dateOver', '结束时间');
+            $form->text('principal', '负责人');
+            $form->text('supervision', '监督人');
+            $form->text('pub','网站公众号推送');
+            $form->textarea('info', '项目详情');
+            $form->textarea('remark', '备注');
         });
     }
 }

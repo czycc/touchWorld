@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('tag/{id}', 'ArticleController@tag');
 //显示特定文章
 Route::get('article/{id}', 'ArticleController@article');
+
+Route::get('project','ProjectController@index');

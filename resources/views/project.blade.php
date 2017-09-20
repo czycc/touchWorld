@@ -34,7 +34,7 @@
                         <li class="supervisor">{{$project->supervision}}</li>
                         <li class="detail">{{$project->info}}</li>
                         <li class="remark">{{$project->remark}}</li>
-                        <li class="articles">{{$project->push}}</li>
+                        <li class="articles">{{$project->pub}}</li>
                     </ul>
                 @endforeach
             </div>

@@ -31,7 +31,7 @@
     font-size: 48px;
     font-weight: bold;
 }
-ul.title{
+ul.titleAll{
     height:76px;
     line-height: 76px;
     text-align: center;
@@ -66,15 +66,21 @@ ul.title li{
 }
 .content{
     width: 1824px;
-    height: 636px;
+    height: 630px;
     overflow: auto;
     overflow-y: hidden;
     position: relative;
 }
 .content ul{
     height: 126px;
-    line-height: 126px;
+    overflow: hidden;
+    /*line-height: 126px;*/
     font-size: 20px;
+    text-align: center;
+}
+.content ul li{
+    height: 126px;
+    line-height: 60px;
 }
 .scroll{
     position: absolute;

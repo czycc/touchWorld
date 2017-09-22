@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>Title</title>
     <link rel="stylesheet" href="{{ asset('site/css/index.css') }}">
 </head>
@@ -33,27 +34,38 @@
                         @if(($loop->index +1)== 7)
                             <div class="scroll">
                                 @endif
-                                <ul class="title">
-                                    <li class="appellation">{{$project->name}}</li>
-                                    <li class="beginTime">{{$project->dateStart}}</li>
-                                    <li class="endTime">{{$project->dateOver}}</li>
-                                    <li class="place">{{$project->location}}</li>
-                                    <li class="Responsible">{{$project->principal}}</li>
-                                    <li class="supervisor">{{$project->supervision}}</li>
-                                    <li class="detail">{{$project->info}}</li>
-                                    <li class="remark">{{$project->remark}}</li>
-                                    <li class="articles">{{$project->pub}}</li>
-                                </ul>
-                                @if(($loop->index +1)== 6)
+                                @if(($loop->index +1)== 13)
+                                    <div class="scroll">
+                                        @endif
+                                        @if(($loop->index +1)== 19)
+                                            <div class="scroll">
+                                                @endif
+                                                <ul class="title">
+                                                    <li class="appellation">{{$project->name}}</li>
+                                                    <li class="beginTime">{{$project->dateStart}}</li>
+                                                    <li class="endTime">{{$project->dateOver}}</li>
+                                                    <li class="place">{{$project->location}}</li>
+                                                    <li class="Responsible">{{$project->principal}}</li>
+                                                    <li class="supervisor">{{$project->supervision}}</li>
+                                                    <li class="detail">{{$project->info}}</li>
+                                                    <li class="remark">{{$project->remark}}</li>
+                                                    <li class="articles">{{$project->pub}}</li>
+                                                </ul>
+                                                @if(($loop->index +1)== 6)
+                                            </div>
+                                        @endif
+                                        @if(($loop->index +1)== 12)
+                                    </div>
+                                @endif
+                                @if(($loop->index +1)== 18)
                             </div>
                         @endif
-                        @if(($loop->index +1)== 12)
+                        @if(($loop->index +1)== 24)
                     </div>
                 @endif
             @endforeach
         </div>
     </div>
-</div>
 </div>
 
 </body>

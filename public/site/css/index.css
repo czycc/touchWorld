@@ -47,19 +47,19 @@ ul.title li{
     border-left: 1px solid white;
 }
 .beginTime,.endTime{
-    width: 224px;
+    width: 170px;
 }
 .place{
     width: 188px;
 }
 .Responsible,.supervisor{
-    width: 156px;
+    width: 120px;
 }
 .detail{
     width: 224px;
 }
 .remark{
-    width: 200px;
+    width: 380px;
 }
 .articles{
     width: 198px;
@@ -84,4 +84,8 @@ ul.title li{
 }
 .scroll{
     position: absolute;
+}
+.content ul li.remark{
+    line-height: 30px;
+    padding-top:12px ;
 }

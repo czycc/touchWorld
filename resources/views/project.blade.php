@@ -25,23 +25,28 @@
             <li class="articles">文章推送</li>
         </ul>
         <div class="content">
-            <div class="scroll">
-                @foreach($projects as $project)
-                    <ul class="title">
-                        <li class="appellation">{{$project->name}}</li>
-                        <li class="beginTime">{{$project->dateStart}}</li>
-                        <li class="endTime">{{$project->dateOver}}</li>
-                        <li class="place">{{$project->location}}</li>
-                        <li class="Responsible">{{$project->principal}}</li>
-                        <li class="supervisor">{{$project->supervision}}</li>
-                        <li class="detail">{{$project->info}}</li>
-                        <li class="remark">{{$project->remark}}</li>
-                        <li class="articles">{{$project->pub}}</li>
-                    </ul>
-                @endforeach
-            </div>
+            @foreach($projects as $project)
+                @if(is_int(($loop->index + 1)/6))
+                    <div class="scroll">
+                        @endif
+                        <ul class="title">
+                            <li class="appellation">{{$project->name}}</li>
+                            <li class="beginTime">{{$project->dateStart}}</li>
+                            <li class="endTime">{{$project->dateOver}}</li>
+                            <li class="place">{{$project->location}}</li>
+                            <li class="Responsible">{{$project->principal}}</li>
+                            <li class="supervisor">{{$project->supervision}}</li>
+                            <li class="detail">{{$project->info}}</li>
+                            <li class="remark">{{$project->remark}}</li>
+                            <li class="articles">{{$project->pub}}</li>
+                        </ul>
+                        @if(is_int(($loop->index + 1)/6))
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
+</div>
 </div>
 
 </body>
@@ -50,24 +55,24 @@
     //获取屏幕的高宽
     var width = $(window).width();
     var height = $(window).height();
-    $('.all').css({'width':width + 'px','height':height + 'px'});
+    $('.all').css({'width': width + 'px', 'height': height + 'px'});
 
 
     var status = 0;
     var len = $('.scroll').length;
     $('.scroll').eq(status).fadeIn(1000).siblings().fadeOut(1000);
-    var timer = setInterval(function(){
+    var timer = setInterval(function () {
         status++;
         $('.scroll').eq(status).fadeIn(1000).siblings().fadeOut(1000);
-        if(status >= len){
+        if (status >= len) {
 //            status = -1;
-            setTimeout(function(){
+            setTimeout(function () {
 
                 window.location.reload();
 
-            },8000)
+            }, 8000)
         }
 
-    },8000)
+    }, 8000)
 </script>
 </html>

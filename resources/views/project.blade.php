@@ -7,6 +7,8 @@
 </head>
 <body>
 <div class="all">
+    <img class="bg" src="{{asset('site/images/logo.png')}}" alt="">
+    <img class="ti" src="{{asset('site/images/title.png')}}" alt="">
     <div class="tabel">
         <div class="header">
             项目执行表
@@ -45,23 +47,27 @@
 </body>
 <script src="{{ asset('site/js/jquery-1.11.3.min.js') }}"></script>
 <script>
+    //获取屏幕的高宽
+    var width = $(window).width();
+    var height = $(window).height();
+    $('.all').css({'width':width + 'px','height':height + 'px'});
+
+
     var status = 0;
-    var timer = setInterval(function () {
+    var len = $('.scroll').length;
+    $('.scroll').eq(status).fadeIn(1000).siblings().fadeOut(1000);
+    var timer = setInterval(function(){
         status++;
-        var scrollHei = parseInt($('.scroll').height());
-        var contentHei = parseInt($('.content').height());
-        var scrollTop = parseInt($('.scroll').css('top'));
-        if (scrollHei <= contentHei) {
-            clearInterval(timer);
-            setTimeout(function () {
+        $('.scroll').eq(status).fadeIn(1000).siblings().fadeOut(1000);
+        if(status >= len){
+//            status = -1;
+            setTimeout(function(){
+
                 window.location.reload();
-            }, 10000)
+
+            },8000)
         }
-        $('.scroll').css('top', -status + 'px');
-        if (-scrollTop >= scrollHei) {
-            clearInterval(timer);
-            window.location.reload();
-        }
-    }, 100)
+
+    },8000)
 </script>
 </html>

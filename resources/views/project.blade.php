@@ -26,21 +26,27 @@
         </ul>
         <div class="content">
             @foreach($projects as $project)
-                @if(is_int(($loop->index + 1)/6))
+                @if(($loop->index +1)== 1)
                     <div class="scroll">
                         @endif
-                        <ul class="title">
-                            <li class="appellation">{{$project->name}}</li>
-                            <li class="beginTime">{{$project->dateStart}}</li>
-                            <li class="endTime">{{$project->dateOver}}</li>
-                            <li class="place">{{$project->location}}</li>
-                            <li class="Responsible">{{$project->principal}}</li>
-                            <li class="supervisor">{{$project->supervision}}</li>
-                            <li class="detail">{{$project->info}}</li>
-                            <li class="remark">{{$project->remark}}</li>
-                            <li class="articles">{{$project->pub}}</li>
-                        </ul>
-                        @if(is_int(($loop->index + 1)/6))
+                        @if(($loop->index +1)== 7)
+                            <div class="scroll">
+                                @endif
+                                <ul class="title">
+                                    <li class="appellation">{{$project->name}}</li>
+                                    <li class="beginTime">{{$project->dateStart}}</li>
+                                    <li class="endTime">{{$project->dateOver}}</li>
+                                    <li class="place">{{$project->location}}</li>
+                                    <li class="Responsible">{{$project->principal}}</li>
+                                    <li class="supervisor">{{$project->supervision}}</li>
+                                    <li class="detail">{{$project->info}}</li>
+                                    <li class="remark">{{$project->remark}}</li>
+                                    <li class="articles">{{$project->pub}}</li>
+                                </ul>
+                                @if(($loop->index +1)== 6)
+                            </div>
+                        @endif
+                        @if(($loop->index +1)== 12)
                     </div>
                 @endif
             @endforeach

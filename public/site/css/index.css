@@ -113,3 +113,7 @@ ul.title li{
 .scroll:nth-child(2){
     display: none;
 }
+.red{
+    color: red;
+    font-weight: bold;
+}

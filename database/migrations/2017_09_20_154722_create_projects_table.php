@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->string('supervision')->comment('监督人');
             $table->date('dateStart')->comment('开始时间');
             $table->date('dateOver')->comment('结束时间');
+            $table->integer('weight')->default(99)->comment('权重');
             $table->text('info')->comment('项目明细');
             $table->string('push')->comment('网站和公众号推送');
             $table->text('remark')->comment('备注');

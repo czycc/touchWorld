@@ -72,17 +72,19 @@ class ProjectController extends Controller
     protected function grid()
     {
         return Admin::grid(Project::class, function (Grid $grid) {
-
+            $grid->model()->orderBy('id', 'desc');
             $grid->id('ID')->sortable();
             $grid->column('name', '项目名称');
             $grid->column('location', '项目地点');
-            $grid->column('dateStart', '开始时间');
-            $grid->column('dateOver', '结束时间');
+            $grid->column('dateStart', '开始时间')->sortable();
+            $grid->column('dateOver', '结束时间')->sortable();
             $grid->column('principal', '负责人');
             $grid->column('supervision', '监督人');
             $grid->column('info', '项目详情');
             $grid->column('remark', '备注');
             $grid->column('pub', '网站公众号推送');
+            $grid->column('finish', '项目完成')->sortable();
+            $grid->column('weight','权重')->sortable();
         });
     }
 
@@ -102,9 +104,15 @@ class ProjectController extends Controller
             $form->date('dateOver', '结束时间');
             $form->text('principal', '负责人');
             $form->text('supervision', '监督人');
-            $form->text('pub','网站公众号推送');
             $form->textarea('info', '项目详情');
             $form->textarea('remark', '备注');
+            $form->number('weight','权重')->default(50);
+            $form->radio('pub','网站公众号推送')
+                ->options(['未完成'=>'未完成','已完成'=>'已完成'])
+                ->default('未完成');
+            $form->radio('finish','项目完成')
+                ->options(['未完成'=>'未完成','已完成'=>'已完成'])
+                ->default('未完成');
         });
     }
 }

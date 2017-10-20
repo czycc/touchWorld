@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1920,user-scalable=no">
-    {{--<meta name="viewport"--}}
-          {{--content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">--}}
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>Title</title>
     <link rel="stylesheet" href="{{ asset('site/css/index.css') }}">
 </head>
@@ -73,8 +72,8 @@
 <script src="{{ asset('site/js/jquery-1.11.3.min.js') }}"></script>
 <script>
     //获取屏幕的高宽
-//    var width = $(window).width();
-//    var height = $(window).height();
+//    var width = $(screen).width();
+//    var height = $(screen).height();
 //    $('.all').css({'width': width + 'px', 'height': height + 'px'});
     function screen()
     {
@@ -82,12 +81,10 @@
         //W3C
         if (docElm.requestFullscreen) {
             docElm.requestFullscreen();
-
         }
         //FireFox
         else if (docElm.mozRequestFullScreen) {
             docElm.mozRequestFullScreen();
-
         }
         //Chrome等
         else if (docElm.webkitRequestFullScreen) {
@@ -103,8 +100,6 @@
     document.body.onclick = function(){
         screen();
     }
-
-
     var status = 0;
     var len = $('.scroll').length;
     $('.scroll').eq(status).fadeIn(1000).siblings().fadeOut(1000);
@@ -114,9 +109,7 @@
         if (status >= len) {
             status = -1;
 //            setTimeout(function () {
-//
 //                window.location.reload();
-//
 //            }, 8000)
         }
 

@@ -5,13 +5,13 @@
     box-sizing: border-box;
     list-style: none;
 }
+
 @font-face{
     font-family: 'font1';
     src: url('../font/1.TTF');
 }
-html,body{
-    width: 100%;
-    height: 100%;
+body{
+    position: relative;
 }
 .all{
     width: 100%;
@@ -28,8 +28,8 @@ html,body{
 }
 .ti{
     position: absolute;
-    width: 54%;
-    top:3%;
+    width: 80%;
+    top:7%;
     left:0;
     right: 0;
     margin:auto;
@@ -40,7 +40,7 @@ html,body{
     left:0;
     right: 0;
     margin: auto;
-    top:18%;
+    top:14%;
     height: 80%;
     color: white;
 }
@@ -51,14 +51,14 @@ html,body{
     border-width: 1px 1px 6px 1px;
     border-style: dashed solid solid solid;
     border-color: white;
-    font-size: 2vw;
+    font-size: 6vw;
     font-weight: bold;
-    padding-top: 1%;
+    padding-top: 2%;
 }
 ul.titleAll{
     height: 8%;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 2.4vw;
 
 }
 ul.title li{
@@ -99,7 +99,7 @@ ul.title li{
 .content ul{
     height: 14%;
     overflow: hidden;
-    font-size: 1vw;
+    font-size: 2.4vw;
     text-align: center;
 }
 .content ul li{
@@ -116,4 +116,5 @@ ul.title li{
 .red{
     color: red;
     font-weight: bold;
+    /*background-color: pink;*/
 }

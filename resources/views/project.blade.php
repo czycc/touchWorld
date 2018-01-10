@@ -75,6 +75,12 @@
 //    var width = $(screen).width();
 //    var height = $(screen).height();
 //    $('.all').css({'width': width + 'px', 'height': height + 'px'});
+    var wid = $(window).width();
+
+    var hei = 16*wid/9;
+
+    $('body').css({'width':wid+'px',"height":hei + 'px'});
+    
     function screen()
     {
         var docElm = document.body;
